@@ -1,15 +1,16 @@
 //
-//  ModuleATarget.m
+//  Target_ModuleA.m
 //  ModuleA
 //
 //  Created by ffzp on 2021/6/24.
 //
 
-#import "ModuleATarget.h"
+#import "Target_ModuleA.h"
 #import "AViewController.h"
-@implementation ModuleATarget
--(UIViewController *)Action_viewController{
+@implementation Target_ModuleA
+-(UIViewController *)Action_viewController:(NSDictionary *)params {
     AViewController *VC = [[AViewController alloc] init];
     return VC;
 }
 @end
+

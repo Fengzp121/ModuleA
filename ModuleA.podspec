@@ -24,13 +24,13 @@ Pod::Spec.new do |spec|
 
   spec.requires_arc = true
   
-  spec.subspec 'ModuleA' do |ss|
-     ss.source_files = "ModuleA/ModuleA/**/*.{h,m}"
+  spec.subspec 'Client' do |ss|
+     ss.source_files = "ModuleA/Client/**/*.{h,m}"
   end
     
   spec.subspec 'Target' do |ss|
      ss.source_files = "ModuleA/Target/**/*.{h,m}"
-     ss.dependency "ModuleA/ModuleA"
+     ss.dependency "ModuleA/Client"
   end
 
 end
