@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = 'ModuleA'
 
-  spec.version      = '0.0.2'
+  spec.version      = '0.0.3'
 
   spec.summary      = '业务模块B'
 
@@ -32,5 +32,7 @@ Pod::Spec.new do |spec|
      ss.source_files = "ModuleA/Target/**/*.{h,m}"
      ss.dependency "ModuleA/Client"
   end
-
+  
+  spec.subspec 'FF_HttpNetwork'
+  spec.subspec 'SDWebImage'
 end
