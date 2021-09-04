@@ -33,6 +33,6 @@ Pod::Spec.new do |spec|
      ss.dependency "ModuleA/Client"
   end
   
-  spec.subspec 'FF_HttpNetwork'
-  spec.subspec 'SDWebImage'
+  spec.dependency 'FF_HttpNetwork'
+  spec.dependency 'SDWebImage'
 end
