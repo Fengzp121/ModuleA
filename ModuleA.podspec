@@ -2,9 +2,9 @@ Pod::Spec.new do |spec|
 
   spec.name         = 'ModuleA'
 
-  spec.version      = '0.0.3'
+  spec.version      = '0.0.4'
 
-  spec.summary      = '业务模块B'
+  spec.summary      = '业务模块A'
 
   spec.description  = <<-DESC
                        TODO: Add long description of the pod here.
@@ -24,15 +24,19 @@ Pod::Spec.new do |spec|
 
   spec.requires_arc = true
   
-  spec.subspec 'Client' do |ss|
-     ss.source_files = "ModuleA/Client/**/*.{h,m}"
+  spec.subspec 'Client' do |client|
+       client.source_files = "ModuleA/Client/**/*.{h,m}"
   end
     
-  spec.subspec 'Target' do |ss|
-     ss.source_files = "ModuleA/Target/**/*.{h,m}"
-     ss.dependency "ModuleA/Client"
+  spec.subspec 'Target' do |target|
+       target.source_files = "ModuleA/Target/**/*.{h,m}"
+       target.dependency "ModuleA/Client"
   end
   
-  spec.dependency 'FF_HttpNetwork'
-  spec.dependency 'SDWebImage'
+  spec.subspec 'Ext' do |ext|
+       ext.dependency "ModuleA/Client"
+       ext.dependency 'FF_HttpNetwork','~> 0.0.1'
+       ext.dependency 'SDWebImage','5.11.1'
+  end
+  
 end
