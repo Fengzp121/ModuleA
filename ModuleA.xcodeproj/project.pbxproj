@@ -17,7 +17,7 @@
 		469091372684B12100ECA757 /* AViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469091362684B12100ECA757 /* AViewController.m */; };
 		4690913E2684B15B00ECA757 /* Target_ModuleA.m in Sources */ = {isa = PBXBuildFile; fileRef = 4690913D2684B15B00ECA757 /* Target_ModuleA.m */; };
 		46B520C926E3A01A00F0AEBE /* TestRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B520C826E3A01A00F0AEBE /* TestRequest.m */; };
-		9EFF9A7361C87AECF8C271C5 /* libPods-ModuleA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0604473BE43D8CB9E9E6A97 /* libPods-ModuleA.a */; };
+		E568592F9F0B6F330CF39B91 /* Pods_ModuleA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DD3DB91B8257201A870900 /* Pods_ModuleA.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,7 @@
 		46B520C726E3A01A00F0AEBE /* TestRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestRequest.h; sourceTree = "<group>"; };
 		46B520C826E3A01A00F0AEBE /* TestRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestRequest.m; sourceTree = "<group>"; };
 		53062D2D52BF396D897DAFF4 /* Pods-ModuleA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModuleA.debug.xcconfig"; path = "Target Support Files/Pods-ModuleA/Pods-ModuleA.debug.xcconfig"; sourceTree = "<group>"; };
-		B0604473BE43D8CB9E9E6A97 /* libPods-ModuleA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ModuleA.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		91DD3DB91B8257201A870900 /* Pods_ModuleA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ModuleA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34DD7EB5CA9F8885ABB8EBA /* Pods-ModuleA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModuleA.release.xcconfig"; path = "Target Support Files/Pods-ModuleA/Pods-ModuleA.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EFF9A7361C87AECF8C271C5 /* libPods-ModuleA.a in Frameworks */,
+				E568592F9F0B6F330CF39B91 /* Pods_ModuleA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,9 +97,10 @@
 		469091342684B0F700ECA757 /* Client */ = {
 			isa = PBXGroup;
 			children = (
-				46B520C526E39FF900F0AEBE /* HttpRequests */,
 				469091352684B12100ECA757 /* AViewController.h */,
 				469091362684B12100ECA757 /* AViewController.m */,
+				46B520C726E3A01A00F0AEBE /* TestRequest.h */,
+				46B520C826E3A01A00F0AEBE /* TestRequest.m */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -113,19 +114,10 @@
 			path = Target;
 			sourceTree = "<group>";
 		};
-		46B520C526E39FF900F0AEBE /* HttpRequests */ = {
-			isa = PBXGroup;
-			children = (
-				46B520C726E3A01A00F0AEBE /* TestRequest.h */,
-				46B520C826E3A01A00F0AEBE /* TestRequest.m */,
-			);
-			path = HttpRequests;
-			sourceTree = "<group>";
-		};
 		68C49DAFD972ECB46F8B8097 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B0604473BE43D8CB9E9E6A97 /* libPods-ModuleA.a */,
+				91DD3DB91B8257201A870900 /* Pods_ModuleA.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -150,6 +142,7 @@
 				469091122684B09A00ECA757 /* Sources */,
 				469091132684B09A00ECA757 /* Frameworks */,
 				469091142684B09A00ECA757 /* Resources */,
+				683DF5108550FECB98EEADED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -225,6 +218,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		683DF5108550FECB98EEADED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ModuleA/Pods-ModuleA-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ModuleA/Pods-ModuleA-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ModuleA/Pods-ModuleA-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

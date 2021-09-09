@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = 'ModuleA'
 
-  spec.version      = '0.0.4'
+  spec.version      = '0.0.5'
 
   spec.summary      = '业务模块A'
 
@@ -26,17 +26,12 @@ Pod::Spec.new do |spec|
   
   spec.subspec 'Client' do |client|
        client.source_files = "ModuleA/Client/**/*.{h,m}"
+       client.dependency 'FF_HttpNetwork'
+       client.dependency 'SDWebImage','5.11.1'
   end
     
   spec.subspec 'Target' do |target|
        target.source_files = "ModuleA/Target/**/*.{h,m}"
        target.dependency "ModuleA/Client"
   end
-  
-  spec.subspec 'Ext' do |ext|
-       ext.dependency "ModuleA/Client"
-       ext.dependency 'FF_HttpNetwork','~> 0.0.1'
-       ext.dependency 'SDWebImage','5.11.1'
-  end
-  
 end
